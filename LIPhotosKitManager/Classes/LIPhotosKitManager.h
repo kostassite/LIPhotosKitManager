@@ -75,6 +75,8 @@ typedef void(^LIImageDataHandler)(NSData *_Nullable imageData,id  _Nonnull targe
 @property (nonatomic, copy, readonly, nonnull) NSString *name;
 @property (nonatomic, strong, readonly, nonnull) NSArray<LIID*> *photos;
 @property (nonatomic, copy, readonly, nonnull) NSString *identifier;
+@property (nonatomic, readonly) PHAssetCollectionSubtype assetCollectionSubtype;
+
 @end
 
 

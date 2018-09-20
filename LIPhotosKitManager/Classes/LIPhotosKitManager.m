@@ -22,7 +22,9 @@ static NSString * LIAlbumName = @"name";
 static NSString * LIAlbumPhotos = @"photos";
 
 
-
+@interface LIAlbum ()
+@property (nonatomic) PHAssetCollectionSubtype assetCollectionSubtype;
+@end
 
 @interface LIPhotosKitManager ()<PHPhotoLibraryChangeObserver>
 @property (nonatomic, strong) NSMutableDictionary *photosResultsDic;
@@ -185,6 +187,8 @@ static NSString * LIAlbumPhotos = @"photos";
         [album setValue:name forKey:LIAlbumName];
         [album setValue:identifier forKey:LIAlbumIdentifier];
         [album setValue:photos forKey:LIAlbumPhotos];
+        album.assetCollectionSubtype = assetCollection.assetCollectionSubtype;
+        
         [albums addObject:album];
         
         [self.photosResultsDic setValue:assetsFetchResult forKey:name];
